@@ -1,0 +1,14 @@
+name: Sync labels
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: micnncim/action-label-syncer@v1.3.0
+        with:
+          repository: |
+            team-MoPlus/moplus_server
+            team-MoPlus/moplus_server2
+            team-MoPlus/moplus
+          token: ${{ secrets.PERSONAL_TOKEN }}
